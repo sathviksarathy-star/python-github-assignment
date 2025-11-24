@@ -27,3 +27,21 @@ if daily_savings < 0:
 # Perform calculation
 estimated_monthly = daily_savings * 30  # simple 30-day estimate
 progress_percent = (estimated_monthly / MONTHLY_GOAL) * 100
+
+# --- Task 4: Display the results clearly ---
+print("\n Savings Summary")
+print("-----------------------------")
+print(f"Today's savings: ${daily_savings:.2f}")
+print(f"Estimated monthly savings: ${estimated_monthly:.2f}")
+print(f"Monthly goal: ${MONTHLY_GOAL:.2f}")
+print(f"Progress toward goal: {progress_percent:.1f}%")
+
+# Progress message
+if progress_percent < 50:
+    message = "You're off to a good start—keep saving!"
+elif progress_percent < 100:
+    message = "Great job! You're getting close to your monthly goal."
+else:
+    message = "Excellent! You're on track to meet or exceed your savings goal."
+
+print(message)
